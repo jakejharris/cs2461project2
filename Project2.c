@@ -2,7 +2,7 @@
 
 /*
 Team number:
-Team members:
+Team members: Jake Harris, Ford Oster, Stefano Annoscia
 */
 
 /* PROJECT 1 */
