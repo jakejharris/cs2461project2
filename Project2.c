@@ -68,8 +68,6 @@ int ques0(int x, int y){
 
 /* Answer to PART B: */
 int ans0(int x, int y){
-
-
     return (x-y);
 }
 
@@ -80,15 +78,19 @@ int ans0(int x, int y){
 
 
 
-/* Question 1 */
+/* Question 1 JAKE HARRIS*/
 int ques1(int x, int y){
     int x_and_y = x&y;
     int x_or_y = ~(~x & ~y);
     return (x_or_y & ~(x_and_y));
     }
 
+int ans1(int x, int y){
 
-/* Question 2 */
+  return 0;
+}
+
+/* Question 2 JAKE HARRIS*/
 int ques2(x) {
     int mask = x>>31;
     int y= (x ^ mask);
@@ -99,7 +101,7 @@ int ques2(x) {
 
 
 
-/* Question 3 */
+/* Question 3 JAKE HARRIS*/
 int ques3(int x) {
     int y = x >> 31;
     int z = !!x;
@@ -107,7 +109,7 @@ int ques3(int x) {
     return y | z;
 }
 
-/* Question 4 */
+/* Question 4 JAKE HARRIS*/
 
 int ques4(int x, int y) {
 	int a = x >> 31;
@@ -116,7 +118,7 @@ int ques4(int x, int y) {
 	  
 }
 
-/* Question 5 */
+/* Question 5 JAKE HARRIS*/
 
 int ques5(int x, int n) {
     /* for this question ONLY, you can  assume x and n are not  negative numbers  */
@@ -261,6 +263,10 @@ int main(){
 	/* To test/run the functions, you will need to mimic the above process (input numbers and then call each of the functions, and print
  the return value) for each of the questions and answers */
 
+	t1=ques1(a,b); /* call function ques0; return value is stored in t1 . Next, print out the return value. */
+	printf("output of ques1 is t1 = %d  \n", t1);
+	t1=ans1(a,b); /* call function ans0, return value is in t1. Next, print out the return value */
+	printf("output of ans1 is t1 = %d  \n", t1);
 
 	return 0;
 }
