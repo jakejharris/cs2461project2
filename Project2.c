@@ -86,8 +86,7 @@ int ques1(int x, int y){
     }
 
 int ans1(int x, int y){
-
-  return 0;
+  return ~(~x&~y)&~(x&y);
 }
 
 /* Question 2 JAKE HARRIS*/
@@ -129,7 +128,7 @@ int ques5(int x, int n) {
     return (z & x);
 }
 
-/* Question 6 */
+/* Question 6 JAKE HARRIS*/
 
 int ques6(int x, int n){
   /* assume n<=30 */
