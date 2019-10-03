@@ -86,18 +86,22 @@ int ques1(int x, int y){
     }
 
 int ans1(int x, int y){
-  return ~(~x&~y)&~(x&y);
+  //return ~(~x&~y)&~(x&y);
+  return (x^y);
 }
 
 /* Question 2 JAKE HARRIS*/
 int ques2(x) {
     int mask = x>>31;
-    int y= (x ^ mask);
+    int y = (x ^ mask);
     int z = (~mask + 1);
 
     return (y+z);
 }
 
+int ans2(int x){
+  return abs(x);
+}
 
 
 /* Question 3 JAKE HARRIS*/
@@ -106,6 +110,10 @@ int ques3(int x) {
     int z = !!x;
 
     return y | z;
+}
+
+int ans3(int x){
+    return 0;
 }
 
 /* Question 4 JAKE HARRIS*/
@@ -254,18 +262,20 @@ int main(){
 	printf("you entered a= %d b= %d  \n", a,b);
 
 
-	t1=ques0(a,b); /* call function ques0; return value is stored in t1 . Next, print out the return value. */
-	printf("output of ques0 is t1 = %d  \n", t1);
-	t1=ans0(a,b); /* call function ans0, return value is in t1. Next, print out the return value */
-	printf("output of ans0 is t1 = %d  \n", t1);
+	t1=ques3(a); /* call function ques0; return value is stored in t1 . Next, print out the return value. */
+	printf("output of ques2 is t1 = %d  \n", t1);
+	t1=ans3(a); /* call function ans0, return value is in t1. Next, print out the return value */
+	printf("output of ans2 is t1 = %d  \n", t1);
 
 	/* To test/run the functions, you will need to mimic the above process (input numbers and then call each of the functions, and print
  the return value) for each of the questions and answers */
 
-	t1=ques1(a,b); /* call function ques0; return value is stored in t1 . Next, print out the return value. */
+/*
+	t1=ques1(a,b); // call function ques0; return value is stored in t1 . Next, print out the return value
 	printf("output of ques1 is t1 = %d  \n", t1);
-	t1=ans1(a,b); /* call function ans0, return value is in t1. Next, print out the return value */
+	t1=ans1(a,b); // call function ans0, return value is in t1. Next, print out the return value
 	printf("output of ans1 is t1 = %d  \n", t1);
+*/
 
 	return 0;
 }
