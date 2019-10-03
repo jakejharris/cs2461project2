@@ -113,6 +113,8 @@ int ques3(int x) {
 }
 
 int ans3(int x){
+    if(x > 0) return 1;
+    if(x < 0) return -1;
     return 0;
 }
 
@@ -122,7 +124,12 @@ int ques4(int x, int y) {
 	int a = x >> 31;
 	int b = y >> 31;
 	return ! (a & !b) | (( !(a ^b)) & (~y +x)>>31);
-	  
+  //to return 1: not ((negative a and positive b)) or (not a XOR b) and ((not y + x)neg/pos)
+}
+
+int ans4(int x, int y){
+  if(x<y && x<0) return 0;
+  return 1;
 }
 
 /* Question 5 JAKE HARRIS*/
@@ -262,9 +269,9 @@ int main(){
 	printf("you entered a= %d b= %d  \n", a,b);
 
 
-	t1=ques3(a); /* call function ques0; return value is stored in t1 . Next, print out the return value. */
+	t1=ques4(a,b); /* call function ques0; return value is stored in t1 . Next, print out the return value. */
 	printf("output of ques2 is t1 = %d  \n", t1);
-	t1=ans3(a); /* call function ans0, return value is in t1. Next, print out the return value */
+	t1=ans4(a,b); /* call function ans0, return value is in t1. Next, print out the return value */
 	printf("output of ans2 is t1 = %d  \n", t1);
 
 	/* To test/run the functions, you will need to mimic the above process (input numbers and then call each of the functions, and print
