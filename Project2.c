@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 /*
 Team number:
@@ -137,19 +138,28 @@ int ans4(int x, int y){
 int ques5(int x, int n) {
     /* for this question ONLY, you can  assume x and n are not  negative numbers  */
 
-    int temp = (1 << n);
+    int temp = (1 << n); //2^n
     int z = temp + ~0;
-
+    //printf("\n%d %d\n",temp, z);
     return (z & x);
+}
+
+int ans5(int x, int n){
+    //printf("\n%d\n%d\n",(int)pow(2,n),x);
+    return (((int)pow(2,n)-1) & x);
 }
 
 /* Question 6 JAKE HARRIS*/
 
 int ques6(int x, int n){
   /* assume n<=30 */
-  int mask = (1 <<n) + ( ~0);
+  int mask = (1 <<n) + ( ~0); //2^n - 1
   int bias = (x >> 31) & mask;
   return ((x+bias)>> n);
+}
+
+int ans6(int x, int n){
+  return ((((int)pow(2,n)-1)&(x>>31))+x)>>n;
 }
 
 
@@ -256,8 +266,9 @@ int main(){
 
   /* Example for ques0 */
   int a, b;/* input parameters to be sent to function  ques0 */
-   int t1;
+  int t1;
 
+  printf(" ");
  	printf("Enter first number, an integer stored into variable A preferably between 1 and 20:");
  	scanf ("%d",&a);
 	printf("\n");
@@ -269,10 +280,10 @@ int main(){
 	printf("you entered a= %d b= %d  \n", a,b);
 
 
-	t1=ques4(a,b); /* call function ques0; return value is stored in t1 . Next, print out the return value. */
-	printf("output of ques2 is t1 = %d  \n", t1);
-	t1=ans4(a,b); /* call function ans0, return value is in t1. Next, print out the return value */
-	printf("output of ans2 is t1 = %d  \n", t1);
+	t1=ques6(a,b); /* call function ques0; return value is stored in t1 . Next, print out the return value. */
+	printf("output of ques5 is t1 = %d  \n", t1);
+	t1=ans6(a,b); /* call function ans0, return value is in t1. Next, print out the return value */
+	printf("output of ans5 is t1 = %d  \n", t1);
 
 	/* To test/run the functions, you will need to mimic the above process (input numbers and then call each of the functions, and print
  the return value) for each of the questions and answers */
