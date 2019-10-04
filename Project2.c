@@ -173,6 +173,14 @@ int ques7(int x, int y){
     return !(~(x_neg^y_neg) & (x_neg^s_neg));
     }
 
+int answer7(int x, int y){
+  int sum = x+y;
+  int x_neg = x/pow(2,31);
+  int y_neg = y/pow(2,31);
+  int x_neg = sum/pow(2,31);
+  return !(~(x_neg^y_neg) & (x_neg^s_neg));
+}
+
 
 /* Question 8  */
 int ques8(void) {
@@ -180,6 +188,12 @@ int ques8(void) {
     int word = byte | byte<<8;
 
     return word | word<<16;
+}
+
+int answer8(void){
+  int byte = 170;
+  int word = byte | byte/pow(2,8);
+  return word | word/pow(2,16);
 }
 
 
@@ -192,6 +206,13 @@ int ques9(int x){
     return !! y;
     }
 
+int answer9(int x){
+  int m8 = 170;
+  int m16 = m8 | m8/pow(2,8);
+  int m32 = m16 | m16/pow(2,16);
+  return (x | m32);
+}
+
 /* Question 10 */
 int ques10(int x){
     int m8= 0xAA;
@@ -199,6 +220,10 @@ int ques10(int x){
     int m32 = m16 | m16<<16;
     int fillx = x | m32;
     return !(~fillx);
+}
+
+int answer10(int x){
+  return;
 }
 
 /*Question 11 */
