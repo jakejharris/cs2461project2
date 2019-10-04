@@ -74,12 +74,6 @@ int ans0(int x, int y){
 
 /* QUESTIONS */
 
-
-
-
-
-
-/* Question 1 JAKE HARRIS*/
 int ques1(int x, int y){
     int x_and_y = x&y;
     int x_or_y = ~(~x & ~y);
@@ -91,7 +85,6 @@ int ans1(int x, int y){
   return (x^y);
 }
 
-/* Question 2 JAKE HARRIS*/
 int ques2(x) {
     int mask = x>>31;
     int y = (x ^ mask);
@@ -104,8 +97,6 @@ int ans2(int x){
   return abs(x);
 }
 
-
-/* Question 3 JAKE HARRIS*/
 int ques3(int x) {
     int y = x >> 31;
     int z = !!x;
@@ -119,8 +110,6 @@ int ans3(int x){
     return 0;
 }
 
-/* Question 4 JAKE HARRIS*/
-
 int ques4(int x, int y) {
 	int a = x >> 31;
 	int b = y >> 31;
@@ -132,8 +121,6 @@ int ans4(int x, int y){
   if(x<y && x<0) return 0;
   return 1;
 }
-
-/* Question 5 JAKE HARRIS*/
 
 int ques5(int x, int n) {
     /* for this question ONLY, you can  assume x and n are not  negative numbers  */
@@ -149,8 +136,6 @@ int ans5(int x, int n){
     return (((int)pow(2,n)-1) & x);
 }
 
-/* Question 6 JAKE HARRIS*/
-
 int ques6(int x, int n){
   /* assume n<=30 */
   int mask = (1 <<n) + ( ~0); //2^n - 1
@@ -162,9 +147,6 @@ int ans6(int x, int n){
   return ((((int)pow(2,n)-1)&(x>>31))+x)>>n;
 }
 
-
-/* Question 7 */
-
 int ques7(int x, int y){
     int sum= x+y;
     int x_neg= x>>31;
@@ -173,31 +155,20 @@ int ques7(int x, int y){
     return !(~(x_neg^y_neg) & (x_neg^s_neg));
     }
 
-int answer7(int x, int y){
-  int sum = x+y;
-  int x_neg = x/pow(2,31);
-  int y_neg = y/pow(2,31);
-  int x_neg = sum/pow(2,31);
-  return !(~(x_neg^y_neg) & (x_neg^s_neg));
+int ans7 (int x, int y) {
+//put something
 }
 
-
-/* Question 8  */
 int ques8(void) {
     int byte = 0xAA;
     int word = byte | byte<<8;
-
     return word | word<<16;
 }
 
-int answer8(void){
-  int byte = 170;
-  int word = byte | byte/pow(2,8);
-  return word | word/pow(2,16);
+int ans8 (void) {
+  //put something
 }
 
-
-/* Question 9 */
 int ques9(int x){
     int m8= 0xAA;
     int m16 = m8 | m8 <<8;
@@ -206,14 +177,10 @@ int ques9(int x){
     return !! y;
     }
 
-int answer9(int x){
-  int m8 = 170;
-  int m16 = m8 | m8/pow(2,8);
-  int m32 = m16 | m16/pow(2,16);
-  return (x | m32);
+int ans9 (int x) {
+  //put something
 }
 
-/* Question 10 */
 int ques10(int x){
     int m8= 0xAA;
     int m16 = m8 | m8 <<8;
@@ -222,41 +189,40 @@ int ques10(int x){
     return !(~fillx);
 }
 
-int answer10(int x){
-  int m8 = 170;
-  int m16 = m8 | m8/pow(2,8);
-  int m32 = m16 | m16/pow(2,16);
-  return !(~(x | m32));
+int ans10 (int x) {
+  //put something
 }
 
-/*Question 11 */
 int ques11(int x, int y){
     int x_and_y = x &y;
     int nx_and_ny = (~x & ~y);
     return (x_and_y | nx_and_ny );
     }
 
-int answer11(int x, int y){
-  return ~(x^y);
+int ans11(int x, int y) {
+    return ~(x ^ y);
 }
-
-/* Question 12 */
 
 int ques12(int x, int n){
   /* assume n is <= 32 */
-	int shift = 32 + ~n +1 ;
+  int shift = 32 + ~n +1 ;
 	int move = (x << shift) >> shift;
 	return !(x^move);
 	}
 
-/* Question 13 */
+int ans12 (int x, int n) {
+  return 1;
+}
+
 int ques13(int x, int n){
   int z = n << 3;
   int y = ~(0xFF << z);
   return (y & x);
 }
 
-/* Question 14 */
+int ans13 (int x, int n) {
+  return x;
+}
 
 int ques14(int x, int n, int m){
 /* assume 0 <= n <=3 and 0 <= m <=3 */
@@ -271,8 +237,18 @@ int ques14(int x, int n, int m){
 	return ( leftover | (n_byte <<m8)| (m_byte << n8) );
 	}
 
-
-/* Question 15 */
+int ans14 (int x, int n, int m) {
+  /* assume 0 <= n <=3 and 0 <= m <=3 */
+	int n8 = n << 3;
+	int m8 = m << 3;
+	int n_mask = 255 << n8;
+	int m_mask = 255 << m8;
+	int n_byte = ((x & n_mask) >> n8) & 255;
+	int m_byte = ((x & m_mask) >> m8) & 255;
+	int bytes_mask = n_mask | m_mask;
+	int leftover = x & ~bytes_mask;
+	return (leftover | (n_byte <<m8) | (m_byte << n8));
+}
 
 int ques15(int x){
   int nx = ~x;
@@ -281,13 +257,28 @@ int ques15(int x){
   return (nxnz & nxov);
 }
 
-/* Question 16 */
+int ans15 (int x) {
+  int nx = ~x;
+  int nxnz = nx;
+  int nxov = !(2 * nx);
+  return (nxnz & nxov);
+}
+
 int ques16(int x){
     int wd16 = x ^ (x>>16);
     int wd8 = wd16 ^ (wd16 >>8);
     int wd4 = wd8 ^ (wd8<<4);
     int wd2= wd4 ^ (wd4<<2);
     int bit = (wd2 ^ (wd2>>1)) & (0x1);
+    return bit;
+}
+
+int ans16 (int x) {
+    int wd16 = x ^ (x>>16);
+    int wd8 = wd16 ^ (wd16 >>8);
+    int wd4 = wd8 ^ (wd8<<4);
+    int wd2= wd4 ^ (wd4<<2);
+    int bit = (wd2 ^ (wd2>>1)) & 1;
     return bit;
 }
 
