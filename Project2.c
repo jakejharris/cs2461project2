@@ -223,7 +223,10 @@ int ques10(int x){
 }
 
 int answer10(int x){
-  return;
+  int m8 = 170;
+  int m16 = m8 | m8/pow(2,8);
+  int m32 = m16 | m16/pow(2,16);
+  return !(~(x | m32));
 }
 
 /*Question 11 */
