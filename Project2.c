@@ -173,6 +173,7 @@ int ques7(int x, int y){
     return !(~(x_neg^y_neg) & (x_neg^s_neg));
     }
 
+
 /* Question 8  */
 int ques8(void) {
     int byte = 0xAA;
@@ -180,6 +181,7 @@ int ques8(void) {
 
     return word | word<<16;
 }
+
 
 /* Question 9 */
 int ques9(int x){
@@ -205,6 +207,10 @@ int ques11(int x, int y){
     int nx_and_ny = (~x & ~y);
     return (x_and_y | nx_and_ny );
     }
+
+int answer11(int x, int y){
+  return ~(x^y);
+}
 
 /* Question 12 */
 
