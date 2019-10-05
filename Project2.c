@@ -74,7 +74,7 @@ int ans0(int x, int y){
 
 /* QUESTIONS */
 
-int ques1(int x, int y){
+int ques1(int x, int y){ //JAKE HARRIS
     int x_and_y = x&y;
     int x_or_y = ~(~x & ~y);
     return (x_or_y & ~(x_and_y));
@@ -85,7 +85,7 @@ int ans1(int x, int y){
   return (x^y);
 }
 
-int ques2(x) {
+int ques2(x) { //JAKE HARRIS
     int mask = x>>31;
     int y = (x ^ mask);
     int z = (~mask + 1);
@@ -97,7 +97,7 @@ int ans2(int x){
   return abs(x);
 }
 
-int ques3(int x) {
+int ques3(int x) { //JAKE HARRIS
     int y = x >> 31;
     int z = !!x;
 
@@ -110,7 +110,7 @@ int ans3(int x){
     return 0;
 }
 
-int ques4(int x, int y) {
+int ques4(int x, int y) { //JAKE HARRIS
 	int a = x >> 31;
 	int b = y >> 31;
 	return ! (a & !b) | (( !(a ^b)) & (~y +x)>>31);
@@ -122,7 +122,7 @@ int ans4(int x, int y){
   return 1;
 }
 
-int ques5(int x, int n) {
+int ques5(int x, int n) { //JAKE HARRIS
     /* for this question ONLY, you can  assume x and n are not  negative numbers  */
 
     int temp = (1 << n); //2^n
@@ -136,7 +136,7 @@ int ans5(int x, int n){
     return (((int)pow(2,n)-1) & x);
 }
 
-int ques6(int x, int n){
+int ques6(int x, int n){ //JAKE HARRIS
   /* assume n<=30 */
   int mask = (1 <<n) + ( ~0); //2^n - 1
   int bias = (x >> 31) & mask;
@@ -147,7 +147,7 @@ int ans6(int x, int n){
   return ((((int)pow(2,n)-1)&(x>>31))+x)>>n;
 }
 
-int ques7(int x, int y){
+int ques7(int x, int y){ //
     int sum= x+y;
     int x_neg= x>>31;
     printf("%d",x_neg);
@@ -157,20 +157,26 @@ int ques7(int x, int y){
     }
 
 int ans7 (int x, int y) {
-//put something
+    int sum = x+y;
+    int x_neg = x/pow(2,31);
+    int y_neg = y/pow(2,31);
+    int s_neg = sum/pow(2,31);
+    return !(~(x_neg^y_neg) & (x_neg^s_neg));
 }
 
-int ques8(void) {
+int ques8(void) { //
     int byte = 0xAA;
     int word = byte | byte<<8;
     return word | word<<16;
 }
 
 int ans8 (void) {
-  //put something
+  int byte = 170;
+  int word = byte | byte/(int)pow(2,8);
+  return word | word/(int)pow(2,16);
 }
 
-int ques9(int x){
+int ques9(int x){ //
     int m8= 0xAA;
     int m16 = m8 | m8 <<8;
     int m32 = m16 | m16<<16;
@@ -179,10 +185,13 @@ int ques9(int x){
     }
 
 int ans9 (int x) {
-  //put something
+  int m8 = 170;
+  int m16 = m8 | m8/(int)pow(2,8);
+  int m32 = m16 | m16/(int)pow(2,16);
+  return (x | m32);
 }
 
-int ques10(int x){
+int ques10(int x){ //
     int m8= 0xAA;
     int m16 = m8 | m8 <<8;
     int m32 = m16 | m16<<16;
@@ -191,10 +200,13 @@ int ques10(int x){
 }
 
 int ans10 (int x) {
-  //put something
+  int m8 = 170;
+  int m16 = m8 | m8/(int)pow(2,8);
+  int m32 = m16 | m16/(int)pow(2,16);
+  return !(~(x | m32));
 }
 
-int ques11(int x, int y){
+int ques11(int x, int y){ //
     int x_and_y = x &y;
     int nx_and_ny = (~x & ~y);
     return (x_and_y | nx_and_ny );
