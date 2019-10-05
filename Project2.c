@@ -158,9 +158,9 @@ int ques7(int x, int y){ //
 
 int ans7 (int x, int y) {
     int sum = x+y;
-    int x_neg = x/pow(2,31);
-    int y_neg = y/pow(2,31);
-    int s_neg = sum/pow(2,31);
+    int x_neg = x/(int)pow(2,31);
+    int y_neg = y/(int)pow(2,31);
+    int s_neg = sum/(int)pow(2,31);
     return !(~(x_neg^y_neg) & (x_neg^s_neg));
 }
 
@@ -171,9 +171,7 @@ int ques8(void) { //
 }
 
 int ans8 (void) {
-  int byte = 170;
-  int word = byte | byte/(int)pow(2,8);
-  return word | word/(int)pow(2,16);
+  return 0xAAAAAAAA;
 }
 
 int ques9(int x){ //
