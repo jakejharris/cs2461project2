@@ -168,6 +168,7 @@ int ans6(int x, int n){
 int ques7(int x, int y){
     int sum= x+y;
     int x_neg= x>>31;
+    printf("%d",x_neg);
     int y_neg = y>>31;
     int s_neg = sum>>31;
     return !(~(x_neg^y_neg) & (x_neg^s_neg));
