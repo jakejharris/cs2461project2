@@ -147,7 +147,7 @@ int ans6(int x, int n){
   return ((((int)pow(2,n)-1)&(x>>31))+x)>>n;
 }
 
-int ques7(int x, int y){ //
+int ques7(int x, int y){ //Stefano Annoscia
     int sum= x+y;
     int x_neg= x>>31;
     printf("%d",x_neg);
@@ -164,7 +164,7 @@ int ans7 (int x, int y) {
     return !(~(x_neg^y_neg) & (x_neg^s_neg));
 }
 
-int ques8(void) { //
+int ques8(void) { //Stefano Annoscia
     int byte = 0xAA;
     int word = byte | byte<<8;
     return word | word<<16;
@@ -174,7 +174,7 @@ int ans8 (void) {
   return 0xAAAAAAAA;
 }
 
-int ques9(int x){ //
+int ques9(int x){ //Stefano Annoscia
     int m8= 0xAA;
     int m16 = m8 | m8 <<8;
     int m32 = m16 | m16<<16;
@@ -189,7 +189,7 @@ int ans9 (int x) {
   return (x | m32);
 }
 
-int ques10(int x){ //
+int ques10(int x){ //Stefano Annoscia
     int m8= 0xAA;
     int m16 = m8 | m8 <<8;
     int m32 = m16 | m16<<16;
@@ -204,7 +204,7 @@ int ans10 (int x) {
   return !(~(x | m32));
 }
 
-int ques11(int x, int y){ //
+int ques11(int x, int y){ //Stefano Annoscia
     int x_and_y = x &y;
     int nx_and_ny = (~x & ~y);
     return (x_and_y | nx_and_ny );
