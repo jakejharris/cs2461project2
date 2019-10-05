@@ -214,7 +214,7 @@ int ans11(int x, int y) {
     return ~(x ^ y);
 }
 
-int ques12(int x, int n){
+int ques12(int x, int n){//Ford Oster
   /* assume n is <= 32 */
   int shift = 32 + ~n +1 ;
 	int move = (x << shift) >> shift;
@@ -225,7 +225,7 @@ int ans12 (int x, int n) {
   return 1;
 }
 
-int ques13(int x, int n){
+int ques13(int x, int n){//Ford Oster
   int z = n << 3;
   int y = ~(0xFF << z);
   return (y & x);
@@ -235,7 +235,7 @@ int ans13 (int x, int n) {
   return x;
 }
 
-int ques14(int x, int n, int m){
+int ques14(int x, int n, int m){//Ford Oster
 /* assume 0 <= n <=3 and 0 <= m <=3 */
 	int n8= n <<3;
 	int m8 = m <<3;
@@ -261,7 +261,7 @@ int ans14 (int x, int n, int m) {
 	return (leftover | (n_byte <<m8) | (m_byte << n8));
 }
 
-int ques15(int x){
+int ques15(int x){//Ford Oster
   int nx = ~x;
   int nxnz = !!nx;
   int nxov = !( nx +nx);
@@ -275,7 +275,7 @@ int ans15 (int x) {
   return (nxnz & nxov);
 }
 
-int ques16(int x){
+int ques16(int x){//Ford Oster
     int wd16 = x ^ (x>>16);
     int wd8 = wd16 ^ (wd16 >>8);
     int wd4 = wd8 ^ (wd8<<4);
